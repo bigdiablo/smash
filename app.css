@@ -131,6 +131,17 @@ hr {
     mask-image: linear-gradient(transparent 85px, #000 186px, transparent 874px);
 }
 
+.cover.team {
+    object-position: center;
+    mask-image: linear-gradient(transparent 61px, #000 259px, transparent 626px);
+}
+
+.cover.coach {
+    height: 613px;
+    object-fit: cover;
+    mask-image: linear-gradient(transparent, #000 157px, transparent 530px);
+}
+
 .bar {
     display: flex;
     align-items: center;
@@ -156,6 +167,12 @@ hr {
     height: 48px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.avatar.big {
+    width: 128px;
+    height: 128px;
+    margin: 16px auto;
 }
 
 h1 {
@@ -251,6 +268,10 @@ h2 {
     color: var(--color-gray);
 }
 
+h2 a {
+    color: var(--color-primary);
+}
+
 .tiles {
     display: flex;
     gap: 16px;
@@ -313,4 +334,8 @@ h2 {
     align-items: center;
     gap: 16px;
     padding: 16px;
+}
+
+.row .badge {
+    margin-left: auto;
 }
