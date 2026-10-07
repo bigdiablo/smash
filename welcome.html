@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto | Smash</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main class="welcome">
+        <section>
+            <svg width="32" height="32" viewBox="0 0 32 32"><path d="M26.6667 8L12 22.6667L5.33333 16"/></svg>
+            <h1>Benvenuto in<br><em>Time to Smash!</em></h1>
+            <p>Il tuo account è stato creato.<br>Sei pronto a iniziare!</p>
+        </section>
+        <a class="primary" href="home-athlete"><i>CONTINUA</i></a>
+    </main>
+    <script>
+        if (location.search) document.querySelector('.primary').href = 'home-' + location.search.slice(1);
+    </script>
+</body>
+</html>

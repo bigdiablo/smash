@@ -418,7 +418,8 @@ h2 a {
 
 .splash,
 .auth,
-.register {
+.register,
+.welcome {
     position: relative;
     isolation: isolate;
     overflow: hidden;
@@ -428,7 +429,8 @@ h2 a {
 .splash::before,
 .splash::after,
 .auth::before,
-.register::before {
+.register::before,
+.welcome::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -451,7 +453,8 @@ h2 a {
 }
 
 .auth::before,
-.register::before {
+.register::before,
+.welcome::before {
     bottom: -499px;
     left: calc(50% - 249px);
     width: 500px;
@@ -474,7 +477,8 @@ h2 a {
 }
 
 .auth,
-.register {
+.register,
+.welcome {
     font-size: 14px;
     line-height: 20px;
 }
@@ -1216,7 +1220,8 @@ hgroup {
     margin-bottom: 10px;
 }
 
-hgroup p {
+hgroup p,
+.welcome p {
     color: var(--color-gray);
 }
 
@@ -1366,4 +1371,30 @@ label.area {
 
 .register .primary {
     width: 175px;
+}
+
+.welcome {
+    gap: 32px;
+}
+
+.welcome section {
+    align-items: center;
+    gap: 32px;
+    margin: auto 0;
+    text-align: center;
+}
+
+.welcome svg {
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-gray-dark);
+    stroke-width: 4;
+    overflow: visible;
+}
+
+.welcome h1 {
+    font-size: 30px;
 }
