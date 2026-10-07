@@ -587,6 +587,11 @@ h1 em {
     background-color: var(--color-white-10);
 }
 
+.ghost svg {
+    fill: var(--color-primary);
+    stroke: none;
+}
+
 .sheet {
     position: fixed;
     inset: 0;
@@ -674,4 +679,114 @@ h1 em {
 
 .sheet footer > * {
     flex: 1;
+}
+
+.settings {
+    flex-direction: row;
+    height: 100dvh;
+    overflow: clip;
+}
+
+.settings > div {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    gap: 16px;
+    padding: 16px 16px 32px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    transition: transform .4s;
+}
+
+.settings:has(:target) > div {
+    transform: translateX(-100%);
+}
+
+.settings .bar {
+    position: relative;
+    padding-bottom: 0;
+}
+
+.bar h1 {
+    position: absolute;
+    left: 50%;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    transform: translateX(-50%);
+}
+
+.upload {
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: 16px auto;
+    background-color: transparent;
+}
+
+.upload img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    opacity: .5;
+}
+
+.upload svg {
+    position: absolute;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--color-gray-dark);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.card > a,
+.card > button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: inherit;
+    color: var(--color-gray-light);
+    text-align: left;
+    background-color: transparent;
+}
+
+.card span {
+    flex: 1;
+    color: var(--color-light);
+}
+
+.card .danger,
+.card .danger span {
+    color: #db2777;
+}
+
+.invite {
+    gap: 8px;
+}
+
+.invite > svg {
+    color: var(--color-gray-light);
+}
+
+.invite h3 {
+    font-size: inherit;
+    font-weight: 500;
+}
+
+.invite p {
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.invite div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
