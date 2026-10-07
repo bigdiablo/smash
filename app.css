@@ -352,8 +352,10 @@ h2 a {
 .shop {
     display: flex;
     gap: 16px;
-    margin-right: -16px;
+    margin: 0 -16px;
+    padding: 0 16px;
     overflow-x: auto;
+    scroll-padding: 0 16px;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
@@ -364,7 +366,7 @@ h2 a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    flex: 0 0 calc(100% - 32px);
+    flex: 0 0 calc(100% - 16px);
     gap: 8px;
     height: 315px;
     padding: 16px;
