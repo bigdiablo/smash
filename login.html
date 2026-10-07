@@ -35,7 +35,7 @@
 
         document.forms[0].onsubmit = event => {
             event.preventDefault();
-            if (localStorage.getItem(email.value)) location.href = 'verify.html';
+            if (localStorage.getItem(email.value)) location.href = 'verify';
             else sheet.classList.add('open');
         };
 
@@ -43,7 +43,7 @@
             event.preventDefault();
             localStorage.setItem(email.value, 'terms');
             sheet.classList.remove('open');
-            location.href = 'verify.html';
+            location.href = 'verify';
         };
 
         sheet.querySelector('.ghost').onclick = () => sheet.classList.remove('open');
