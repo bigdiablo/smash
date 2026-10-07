@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione | Smash</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main class="register">
+        <button class="btn" type="button" aria-label="Indietro" onclick="history.back()"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 10.6667L1.33333 8L4 5.33333M1.33333 8H14.6667"/></svg></button>
+        <form>
+            <fieldset>
+                <hgroup>
+                    <h1>Chi sei?</h1>
+                    <p>Scegli come vuoi vivere <em>Time to smash</em></p>
+                </hgroup>
+                <label class="role"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M10.341 10.848C10.721 9.967 11.393 9.245 12.243 8.802C13.094 8.359 14.071 8.224 15.01 8.418C15.949 8.612 16.793 9.124 17.398 9.868C18.004 10.612 18.334 11.541 18.333 12.5C18.333 15.722 15 18.334 10.833 18.334C7.436 18.334 4.039 17.65 2.191 16.282C1.836 16.019 1.665 15.589 1.674 15.147C1.765 10.603 2.189 1.667 8.333 1.667C8.996 1.667 9.632 1.93 10.101 2.399C10.57 2.868 10.833 3.504 10.833 4.167C10.833 4.609 10.658 5.033 10.345 5.346C10.033 5.658 9.609 5.834 9.167 5.834C8.246 5.834 7.8 5.464 7.5 5M12.5 11.667C11.997 11.29 11.415 11.031 10.798 10.91C10.181 10.79 9.545 10.81 8.937 10.971C8.329 11.131 7.765 11.427 7.288 11.836C6.81 12.245 6.431 12.757 6.18 13.334M8.303 5.688C6.682 6.648 7.917 10.834 6.667 12.5"/></svg><span>Atleta<small>Combatti o gareggi.</small></span><input type="radio" name="account" value="athlete" checked></label>
+                <label class="role"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M13.333 17.5V15.833C13.333 14.949 12.982 14.101 12.357 13.476C11.732 12.851 10.884 12.5 10 12.5H5C4.116 12.5 3.268 12.851 2.643 13.476C2.018 14.101 1.667 14.949 1.667 15.833V17.5M18.333 17.5V15.833C18.333 15.095 18.087 14.377 17.635 13.794C17.182 13.21 16.548 12.793 15.833 12.608M13.333 2.608C14.05 2.792 14.686 3.209 15.14 3.794C15.594 4.378 15.84 5.097 15.84 5.837C15.84 6.578 15.594 7.297 15.14 7.881C14.686 8.466 14.05 8.883 13.333 9.067M10.833 5.833C10.833 7.674 9.341 9.167 7.5 9.167C5.659 9.167 4.167 7.674 4.167 5.833C4.167 3.992 5.659 2.5 7.5 2.5C9.341 2.5 10.833 3.992 10.833 5.833Z"/></svg><span>Coach<small>Alleni uno o più atleti.</small></span><input type="radio" name="account" value="coach"></label>
+                <label class="role"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M16.667 10.833C16.667 15 13.75 17.083 10.283 18.291C10.102 18.353 9.904 18.35 9.725 18.283C6.25 17.083 3.333 15 3.333 10.833V5C3.333 4.779 3.421 4.567 3.577 4.41C3.734 4.254 3.946 4.166 4.167 4.166C5.833 4.166 7.917 3.166 9.367 1.9C9.543 1.749 9.768 1.666 10 1.666C10.232 1.666 10.457 1.749 10.633 1.9C12.092 3.175 14.167 4.166 15.833 4.166C16.054 4.166 16.266 4.254 16.422 4.41C16.579 4.567 16.667 4.779 16.667 5V10.833Z"/></svg><span>Team<small>Gestisci una palestra o associazione.</small></span><input type="radio" name="account" value="team"></label>
+                <label class="role"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 1.666L12.575 6.883L18.333 7.724L14.167 11.783L15.15 17.516L10 14.808L4.85 17.516L5.833 11.783L1.667 7.724L7.425 6.883L10 1.666Z"/></svg><span>Fan<small>Segui i tuoi fighter preferiti.</small></span><input type="radio" name="account" value="fan"></label>
+                <label class="role"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M10.488 2.154C10.176 1.842 9.752 1.666 9.31 1.666H3.333C2.891 1.666 2.468 1.842 2.155 2.154C1.842 2.467 1.667 2.891 1.667 3.333V9.309C1.667 9.751 1.843 10.175 2.155 10.488L9.408 17.741C9.787 18.117 10.3 18.329 10.833 18.329C11.367 18.329 11.88 18.117 12.258 17.741L17.742 12.258C18.118 11.879 18.329 11.367 18.329 10.833C18.329 10.299 18.118 9.786 17.742 9.408L10.488 2.154ZM6.25 6.666C6.48 6.666 6.667 6.479 6.667 6.249C6.667 6.019 6.48 5.833 6.25 5.833C6.02 5.833 5.833 6.019 5.833 6.249C5.833 6.479 6.02 6.666 6.25 6.666Z"/></svg><span>Brand<small>Promuovi prodotti ed eventi.</small></span><input type="radio" name="account" value="brand"></label>
+            </fieldset>
+            <footer>
+                <button class="ghost" type="button" onclick="history.back()">INDIETRO</button>
+                <button class="primary" type="submit"><i>CONTINUA</i></button>
+            </footer>
+        </form>
+    </main>
+    <script>
+        document.forms[0].onsubmit = event => {
+            event.preventDefault();
+            location.href = 'register-' + event.target.account.value;
+        };
+    </script>
+</body>
+</html>

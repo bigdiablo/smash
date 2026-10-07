@@ -417,7 +417,8 @@ h2 a {
 }
 
 .splash,
-.auth {
+.auth,
+.register {
     position: relative;
     isolation: isolate;
     overflow: hidden;
@@ -426,7 +427,8 @@ h2 a {
 
 .splash::before,
 .splash::after,
-.auth::before {
+.auth::before,
+.register::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -448,7 +450,8 @@ h2 a {
     mix-blend-mode: overlay;
 }
 
-.auth::before {
+.auth::before,
+.register::before {
     bottom: -499px;
     left: calc(50% - 249px);
     width: 500px;
@@ -470,7 +473,8 @@ h2 a {
     margin-top: auto;
 }
 
-.auth {
+.auth,
+.register {
     font-size: 14px;
     line-height: 20px;
 }
@@ -488,6 +492,7 @@ h2 a {
 }
 
 .auth h1,
+.register h1,
 .sheet h1 {
     font-size: 30px;
     text-align: left;
@@ -497,7 +502,7 @@ h2 a {
     margin: 96px 0 32px;
 }
 
-h1 em {
+em {
     font-style: normal;
     color: var(--color-primary);
 }
@@ -1156,4 +1161,98 @@ fieldset {
     position: sticky;
     bottom: 34px;
     margin: auto 0 18px;
+}
+
+.register form {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    flex: 1;
+    margin-top: 32px;
+}
+
+.register form > fieldset {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+hgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+hgroup p {
+    color: var(--color-gray);
+}
+
+.role {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 76px;
+    padding: 0 16px;
+    border-radius: 8px;
+    background-color: var(--color-white-10);
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.role svg {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--color-white-10);
+    overflow: visible;
+}
+
+.role small {
+    margin-top: 4px;
+    line-height: 12px;
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+.role input {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    border: 2px solid var(--color-white-10);
+    border-radius: 50%;
+    appearance: none;
+}
+
+.role :checked {
+    padding: 2px;
+    border-color: var(--color-primary);
+    background: var(--color-primary) content-box;
+}
+
+.role:has(:checked) {
+    background-color: rgba(218, 231, 36, .1);
+    box-shadow: inset 0 0 0 2px var(--color-primary);
+}
+
+.role:has(:checked) svg {
+    background-color: var(--color-primary);
+    color: var(--color-gray-dark);
+}
+
+.register footer {
+    display: flex;
+    gap: 16px;
+    padding-top: 24px;
+}
+
+.register .ghost {
+    flex: 1;
+    padding: 0;
+}
+
+.register .primary {
+    width: 175px;
 }
