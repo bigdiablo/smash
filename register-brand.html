@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione brand | Smash</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main class="register">
+        <button class="btn" type="button" aria-label="Indietro" onclick="history.back()"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 10.6667L1.33333 8L4 5.33333M1.33333 8H14.6667"/></svg></button>
+        <ol class="progress"><li class="done"></li><li></li><li></li><li></li></ol>
+        <form>
+            <input type="hidden" name="account" value="brand">
+            <fieldset>
+                <hgroup>
+                    <h1>Come si chiama il tuo brand?</h1>
+                    <p>Questo sarà il nome con cui il tuo brand verrà presentato alla community.</p>
+                </hgroup>
+                <fieldset>
+                    <legend>Nome Brand <b>*</b></legend>
+                    <input class="field" type="text" autocomplete="organization" required>
+                </fieldset>
+            </fieldset>
+            <fieldset disabled>
+                <hgroup>
+                    <h1>Raccontate il vostro brand</h1>
+                    <p>Ti mostreremo eventi, team e atleti vicino a te.</p>
+                </hgroup>
+                <fieldset>
+                    <legend>Descrizione</legend>
+                    <label class="field area"><textarea maxlength="280"></textarea><small>0/280 characters</small></label>
+                </fieldset>
+            </fieldset>
+            <fieldset disabled>
+                <hgroup>
+                    <h1>Dove operate?</h1>
+                    <p>Indica da dove opera il tuo brand.</p>
+                </hgroup>
+                <fieldset>
+                    <legend>Paese <b>*</b></legend>
+                    <label class="field">
+                        <select>
+                            <option selected>🇮🇹 Italia</option>
+                            <option>🇦🇱 Albania</option>
+                            <option>🇫🇷 Francia</option>
+                            <option>🇩🇪 Germania</option>
+                            <option>🇬🇧 Regno Unito</option>
+                            <option>🇷🇴 Romania</option>
+                            <option>🇪🇸 Spagna</option>
+                            <option>🇨🇭 Svizzera</option>
+                        </select>
+                        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 6L8 10L12 6"/></svg>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Città <b>*</b></legend>
+                    <label class="field"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M14 14L11.1333 11.1333M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z"/></svg><input type="text" placeholder="Cerca..." required></label>
+                </fieldset>
+            </fieldset>
+            <fieldset disabled>
+                <hgroup>
+                    <h1>Dove possiamo trovarvi?</h1>
+                    <p>Aggiungete il vostro sito web ufficiale per permettere agli utenti di conoscervi meglio.</p>
+                </hgroup>
+                <fieldset>
+                    <legend>Sito internet</legend>
+                    <label class="field"><span>https://</span><input type="text" inputmode="url" autocomplete="url"></label>
+                </fieldset>
+            </fieldset>
+            <footer>
+                <button class="ghost" type="button" onclick="history.back()">INDIETRO</button>
+                <button class="primary" type="submit"><i>CONTINUA</i></button>
+            </footer>
+        </form>
+    </main>
+    <script src="register.js"></script>
+</body>
+</html>

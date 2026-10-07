@@ -936,7 +936,8 @@ search .field {
 }
 
 .field input,
-.field select {
+.field select,
+.field textarea {
     flex: 1;
     min-width: 0;
     border: 0;
@@ -1163,6 +1164,25 @@ fieldset {
     margin: auto 0 18px;
 }
 
+.progress {
+    display: flex;
+    gap: 6px;
+    margin: 28px 0 12px;
+    list-style: none;
+}
+
+.progress li {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(var(--color-primary), var(--color-primary)) 0 / 0 no-repeat #262626;
+    transition: background-size .4s;
+}
+
+.progress .done {
+    background-size: 100%;
+}
+
 .register form {
     display: grid;
     grid-template-rows: 1fr auto;
@@ -1175,6 +1195,18 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    transition: opacity .3s .1s, transform .4s;
+}
+
+.register form > :disabled {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(48px);
+    transition: opacity .2s, transform .4s, visibility .4s;
+}
+
+.register form > :disabled:has(~ :enabled) {
+    transform: translateX(-48px);
 }
 
 hgroup {
@@ -1186,6 +1218,85 @@ hgroup {
 
 hgroup p {
     color: var(--color-gray);
+}
+
+.register legend {
+    margin-bottom: 4px;
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+legend b {
+    font-weight: 400;
+    color: #f43f5e;
+}
+
+.register .field {
+    width: 100%;
+}
+
+.field span {
+    font-weight: 500;
+    color: var(--color-gray-light);
+}
+
+.field:has([type="date"]) svg {
+    color: var(--color-gray);
+}
+
+.field [type="date"] {
+    position: relative;
+    height: 20px;
+    color-scheme: dark;
+}
+
+.field [type="date"]:invalid:not(:focus)::-webkit-datetime-edit {
+    opacity: 0;
+}
+
+.field [type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+    opacity: 0;
+    cursor: pointer;
+}
+
+label.area {
+    flex-direction: column;
+    align-items: stretch;
+    height: 110px;
+    padding-bottom: 17px;
+}
+
+.area textarea {
+    resize: none;
+}
+
+.area small {
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+.chips .add {
+    position: static;
+    width: 40px;
+    height: 40px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-white-10) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23E5E5E5' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'><path d='M2.5 6H9.5M6 2.5V9.5'/></svg>") center / 12px no-repeat;
+    opacity: 1;
+    font: inherit;
+    font-size: 12px;
+    color: var(--color-light);
+    transition: width .4s;
+}
+
+.chips .add:focus {
+    width: 160px;
+    background-image: none;
 }
 
 .role {
