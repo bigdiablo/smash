@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accedi | Smash</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main class="auth">
+        <img class="logo" src="assets/logo-smash.svg" alt="Time to Smash">
+        <h1>Accedi a <em>Time to Smash</em></h1>
+        <p>Inizia subito a connetterti con la tua community</p>
+        <form>
+            <input class="field" type="email" placeholder="Email" autocomplete="email" required>
+            <button class="primary" type="submit"><i>INVIA CODICE</i></button>
+        </form>
+    </main>
+    <div class="sheet">
+        <form>
+            <h1>Termini e consensi</h1>
+            <p>Prima di completare la registrazione, conferma di aver letto e accettato i documenti richiesti.</p>
+            <label class="check"><input type="checkbox" required><span>Accept terms and conditions<small>Dichiaro di aver letto, compreso e di accettare le <a href="https://www.timetosmash.com/condizioni-generali" target="_blank">Condizioni Generali</a> e la <a href="https://www.timetosmash.com/privacy" target="_blank">Privacy Policy</a> (obbligatorio)</small></span></label>
+            <label class="check"><input type="checkbox" required><span>Approvazione delle clausole specifiche<small>Ai sensi degli artt. 1341 ss. c.c., dichiaro di accettare le seguenti clausole delle <a href="https://www.timetosmash.com/condizioni-generali" target="_blank">Condizioni Generali</a>: 3 (Età minima e tutela dei minori), 4.3 (Profilo Brand), 5.2 e 5.5 (Marketplace), 6.3 (Proprietà industriale e intellettuale), 8.4 (Credenziali di accesso), 9.1 e 9.3 (Caricamento dei dati), 12 (Esclusioni e limitazioni di responsabilità), 14 (Modifica delle CG) (obbligatorio)</small></span></label>
+            <label class="check"><input type="checkbox"><span>Comunicazioni facoltative<small>Sono interessato a ricevere comunicazioni promozionali tramite email (newsletter) sui servizi offerti dal Titolare (facoltativo)</small></span></label>
+            <footer>
+                <button class="ghost" type="button">DECLINA</button>
+                <button class="primary" type="submit"><i>ACCETTA</i></button>
+            </footer>
+        </form>
+    </div>
+    <script>
+        const email = document.querySelector('.field');
+        const sheet = document.querySelector('.sheet');
+
+        document.forms[0].onsubmit = event => {
+            event.preventDefault();
+            if (localStorage.getItem(email.value)) location.href = 'verify.html';
+            else sheet.classList.add('open');
+        };
+
+        document.forms[1].onsubmit = event => {
+            event.preventDefault();
+            localStorage.setItem(email.value, 'terms');
+            sheet.classList.remove('open');
+            location.href = 'verify.html';
+        };
+
+        sheet.querySelector('.ghost').onclick = () => sheet.classList.remove('open');
+    </script>
+</body>
+</html>
