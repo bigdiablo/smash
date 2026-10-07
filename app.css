@@ -414,3 +414,71 @@ h2 a {
     background-color: var(--color-secondary);
     color: var(--color-gray-dark);
 }
+
+.splash {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 16px 16px 34px;
+}
+
+.splash::before,
+.splash::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+}
+
+.splash::before {
+    top: -777px;
+    left: -600px;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    filter: blur(135px);
+}
+
+.splash::after {
+    inset: 0;
+    background: url("assets/cover-splash.jpg") center / cover;
+    mix-blend-mode: overlay;
+}
+
+.splash .logo {
+    position: absolute;
+    top: calc(50% - 27px);
+    left: calc(50% - 108px);
+}
+
+.splash .primary {
+    margin-top: auto;
+}
+
+.primary,
+.ghost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 6px;
+    font: 700 14px/20px "Unbounded", sans-serif;
+}
+
+.primary {
+    background-color: var(--color-primary);
+    color: var(--color-gray-dark);
+}
+
+.primary i {
+    margin: 0 2px;
+    font-style: normal;
+    transform: skewX(-10deg) scaleY(.985);
+}
+
+.ghost {
+    border: 2px solid var(--color-white-10);
+    background-color: var(--color-white-10);
+}
