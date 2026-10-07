@@ -482,6 +482,10 @@ h2 a {
     align-self: flex-start;
 }
 
+.btn + .logo {
+    margin-top: 16px;
+}
+
 .auth h1,
 .sheet h1 {
     font-size: 30px;
@@ -503,6 +507,11 @@ h1 em {
     color: var(--color-gray);
 }
 
+.auth b {
+    font-weight: 500;
+    color: var(--color-light);
+}
+
 .field {
     padding: 14px 12px;
     border: 0;
@@ -515,6 +524,39 @@ h1 em {
 
 .field::placeholder {
     color: var(--color-gray);
+}
+
+.otp {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.otp input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: var(--color-white-10);
+    font: inherit;
+    font-weight: 700;
+    color: var(--color-light);
+    text-align: center;
+}
+
+.otp input:focus {
+    border-color: var(--color-primary);
+}
+
+.otp + p {
+    display: flex;
+    gap: 8px;
+}
+
+.otp + p a {
+    font-weight: 500;
+    color: var(--color-primary);
 }
 
 .primary,

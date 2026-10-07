@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica codice | Smash</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main class="auth">
+        <button class="btn" type="button" aria-label="Indietro" onclick="history.back()"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 10.6667L1.33333 8L4 5.33333M1.33333 8H14.6667"/></svg></button>
+        <img class="logo" src="assets/logo-smash.svg" alt="Time to Smash">
+        <h1>Inserisci il<br><em>codice</em></h1>
+        <p>Abbiamo inviato un codice di verifica a 6 cifre a: <b>m***@email.com</b></p>
+        <div class="otp">
+            <input inputmode="numeric" maxlength="1" autocomplete="one-time-code" autofocus>
+            <input inputmode="numeric" maxlength="1">
+            <input inputmode="numeric" maxlength="1">
+            <input inputmode="numeric" maxlength="1">
+            <input inputmode="numeric" maxlength="1">
+            <input inputmode="numeric" maxlength="1">
+        </div>
+        <p>Non hai ricevuto il codice? <a href="#">Reinvia codice</a></p>
+        <a class="primary" href="profile-man.html"><i>VERIFICA</i></a>
+    </main>
+    <script>
+        const slots = document.querySelectorAll('.otp input');
+
+        slots.forEach((slot, index) => {
+            slot.onfocus = () => slot.select();
+            slot.oninput = () => {
+                if (slot.value) slots[index + 1]?.focus();
+            };
+            slot.onkeydown = event => {
+                if (event.key === 'Backspace' && !slot.value) slots[index - 1]?.focus();
+            };
+        });
+    </script>
+</body>
+</html>
