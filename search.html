@@ -140,6 +140,7 @@
         const fade = () => sheet.classList.toggle('more', options.scrollTop + options.clientHeight < options.scrollHeight - 1);
 
         document.querySelector('search .btn').onclick = () => {
+            document.activeElement.blur();
             sheet.classList.add('open');
             fade();
         };
