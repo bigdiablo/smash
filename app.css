@@ -53,10 +53,18 @@ main {
     background-color: #000;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 480px) {
+    body {
+        background-color: #000;
+    }
+
     main {
         width: 100%;
         min-width: 100%;
+    }
+
+    body > .sheet form {
+        max-width: none;
     }
 }
 
