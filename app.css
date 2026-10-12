@@ -21,6 +21,7 @@ body {
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
