@@ -13,12 +13,12 @@
         <h1>Inserisci il<br><em>codice</em></h1>
         <p>Abbiamo inviato un codice di verifica a 6 cifre a: <b>m***@email.com</b></p>
         <div class="otp">
-            <input inputmode="numeric" maxlength="1" autocomplete="one-time-code" autofocus>
-            <input inputmode="numeric" maxlength="1">
-            <input inputmode="numeric" maxlength="1">
-            <input inputmode="numeric" maxlength="1">
-            <input inputmode="numeric" maxlength="1">
-            <input inputmode="numeric" maxlength="1">
+            <input inputmode="numeric" autocomplete="one-time-code" autofocus>
+            <input inputmode="numeric">
+            <input inputmode="numeric">
+            <input inputmode="numeric">
+            <input inputmode="numeric">
+            <input inputmode="numeric">
         </div>
         <p>Non hai ricevuto il codice? <a href="#">Reinvia codice</a></p>
         <a class="primary" href="register"><i>VERIFICA</i></a>
@@ -32,7 +32,12 @@
         slots.forEach((slot, index) => {
             slot.onfocus = () => slot.select();
             slot.oninput = () => {
-                if (slot.value) slots[index + 1]?.focus();
+                const digits = slot.value.replace(/\D/g, '').slice(0, slots.length - index);
+                slot.value = '';
+                [...digits].forEach((digit, offset) => {
+                    slots[index + offset].value = digit;
+                });
+                slots[Math.min(index + digits.length, slots.length - 1)].focus();
             };
             slot.onkeydown = event => {
                 if (event.key === 'Backspace' && !slot.value) slots[index - 1]?.focus();
