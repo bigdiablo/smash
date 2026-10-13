@@ -113,5 +113,43 @@
             </div>
         </div>
     </main>
+    <div class="sheet edit">
+        <form>
+            <header>
+                <h1>Nome</h1>
+                <button class="btn" type="button" aria-label="Chiudi"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M12 4L4 12M4 4L12 12"/></svg></button>
+            </header>
+            <input class="field" type="text" value="Anuji" aria-label="Nome">
+            <footer>
+                <button class="ghost" type="button">ANNULLA</button>
+                <button class="primary" type="submit"><i>SALVA</i></button>
+            </footer>
+        </form>
+    </div>
+    <script>
+        const sheet = document.querySelector('.sheet');
+        const title = sheet.querySelector('h1');
+        const field = sheet.querySelector('.field');
+        let value;
+
+        document.querySelectorAll('#profilo .card button:not(.danger)').forEach(row => {
+            row.onclick = () => {
+                value = row.childNodes[1];
+                title.textContent = field.ariaLabel = row.firstChild.textContent;
+                field.value = value.textContent;
+                sheet.classList.add('open');
+            };
+        });
+
+        sheet.querySelectorAll('.btn, .ghost').forEach(button => {
+            button.onclick = () => sheet.classList.remove('open');
+        });
+
+        sheet.querySelector('form').onsubmit = event => {
+            event.preventDefault();
+            value.textContent = field.value;
+            sheet.classList.remove('open');
+        };
+    </script>
 </body>
 </html>

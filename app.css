@@ -1416,3 +1416,29 @@ label.area {
 .welcome h1 {
     font-size: 30px;
 }
+
+.edit form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 442px;
+}
+
+.edit header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit h1 {
+    font-size: 24px;
+}
+
+.edit footer {
+    margin-top: auto;
+}
+
+.edit .primary {
+    flex: none;
+    width: 175px;
+}
