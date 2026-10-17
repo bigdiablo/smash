@@ -1443,6 +1443,11 @@ label.area {
     width: 175px;
 }
 
+.btn[aria-pressed="true"] {
+    background-color: var(--color-primary);
+    color: var(--color-gray-dark);
+}
+
 .meta:has(+ .availability) {
     margin-top: -8px;
 }
