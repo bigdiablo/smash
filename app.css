@@ -1463,6 +1463,14 @@ label.area {
     white-space: nowrap;
 }
 
+.public .stats {
+    margin-bottom: 40px;
+}
+
 .availability + .stats {
     margin-bottom: 24px;
+}
+
+.public .meta + .bio {
+    margin-top: 24px;
 }
