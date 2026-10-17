@@ -1442,3 +1442,27 @@ label.area {
     flex: none;
     width: 175px;
 }
+
+.meta:has(+ .availability) {
+    margin-top: -8px;
+}
+
+.availability {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: -8px 0;
+}
+
+.availability li {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, .2);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.availability + .stats {
+    margin-bottom: 24px;
+}
